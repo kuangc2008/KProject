@@ -1,0 +1,1 @@
+include ':app', ':algorithm', ':50_android_hacks'
