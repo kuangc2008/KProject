@@ -1,1 +1,1 @@
-include ':app', ':algorithm', ':50_android_hacks', ':kimageloader'
+include ':app', ':50_android_hacks', ':kimageloader', ':algorithm2'
