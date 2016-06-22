@@ -11,11 +11,11 @@ import java.util.List;
 
 public class ActivityFinder {
 
-    private static final String MAIN_ACTIVITY_ACTION = "com.kc.main";
+    private static final String MAIN_ACTIVITY_ACTION = "com.kc.life.rise";
 
     public static List<ActivityInfo> getAllActivity(Context context) {
 
-        PackageManager pm = context.getPackageManager();
+        PackageManager pm = context.getApplicationContext().getPackageManager();
         Intent intent = new Intent(MAIN_ACTIVITY_ACTION);
         intent.setPackage(context.getPackageName());
         List<ResolveInfo> infos = pm.queryIntentActivities(intent, 0);
