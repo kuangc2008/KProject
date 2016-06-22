@@ -48,6 +48,8 @@ public abstract class ImageWorker {
      */
     public static boolean cancelPotentialWork(Object data, ImageView imageView) {
 
+        return false;
+
     }
 
     private class BitmapWorkerTask extends LIFOTask {
@@ -60,7 +62,7 @@ public abstract class ImageWorker {
 
     private class BitmapWorkerRunnable implements Runnable {
         private Object data;
-        private final WeakReference<ImageView> imageVIewReference;
+//        private final WeakReference<ImageView> imageVIewReference;
         private BitmapWorkerTask parentTask;
 
         @Override
