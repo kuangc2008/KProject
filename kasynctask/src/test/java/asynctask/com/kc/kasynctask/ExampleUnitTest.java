@@ -9,6 +9,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -67,6 +68,99 @@ public class ExampleUnitTest {
         synchronized (ExampleUnitTest.class) {
             try {
                 ExampleUnitTest.class.wait(1000000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+
+    @Test
+    public void testFunture() {
+        BlockingQueue<Runnable> queue = new LinkedBlockingDeque<>(5);
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(1, 5, 0, TimeUnit.SECONDS, queue);
+
+        Callable<Integer> heheda = new Callable<Integer>() {
+            @Override
+            public Integer call() throws Exception {
+                System.out.println("1 ");
+                Thread.sleep(3000);
+                System.out.println("2 ");
+                return 3;
+            }
+        };
+
+        Future<Integer> future = executor.submit(heheda);
+
+
+
+        for (int i=0; i< 5; i++) {
+            try {
+                System.out.println("3 ");
+                System.out.println("1 " + future.get());
+                System.out.println("4 ");
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+
+
+
+    FutureTask<Integer> task  = null;
+    @Test
+    public void testFuntureTask() {
+        BlockingQueue<Runnable> queue = new LinkedBlockingDeque<>(5);
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(1, 5, 0, TimeUnit.SECONDS, queue);
+
+        Callable<Integer> heheda = new Callable<Integer>() {
+            @Override
+            public Integer call() throws Exception {
+                System.out.println("1 ");
+                Thread.sleep(3000);
+                System.out.println("2 ");
+                return 3;
+            }
+        };
+
+        task = new FutureTask<Integer>(heheda){
+            @Override
+            protected void done() {
+                for (int i=0; i< 5; i++) {
+                    try {
+                        System.out.println("3 ");
+                    System.out.println("1 " + task.get());
+                        System.out.println("4 ");
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }
+
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+            }
+        };
+
+       executor.execute(task);
+
+
+
+        for (int i=0; i< 5; i++) {
+            try {
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
