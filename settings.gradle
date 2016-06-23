@@ -1,1 +1,1 @@
-include ':app', ':50_android_hacks', ':kimageloader', ':algorithm2', ':dynamic-proxy-hook', ':kasynctask'
+include ':app', ':50_android_hacks', ':kimageloader', ':algorithm2', ':dynamic-proxy-hook', ':kasynctask', ':binder-hook'
