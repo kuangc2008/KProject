@@ -26,4 +26,5 @@ dependencies {
     compile project(':dynamic-proxy-hook')
     compile project(':kasynctask')
     compile project(':binder-hook')
+    compile project(':touchevent1')
 }

@@ -69,6 +69,18 @@ public class ImageCache {
         }
     }
 
+    public void addBitmapToCache(String dataString, Bitmap bitmap) {
+
+    }
+
+    public Bitmap getBitmapFromMemCache(String s) {
+        return null;
+    }
+
+    public Bitmap getBitmapFromDiskCache(String dataString) {
+        return null;
+    }
+
 
     /**
      * A holder class that contains cache parameters.
