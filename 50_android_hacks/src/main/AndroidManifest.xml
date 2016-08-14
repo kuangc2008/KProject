@@ -6,6 +6,16 @@
         android:label="@string/app_name"
         android:supportsRtl="true">
 
+        <activity android:name=".TransActivityTest1" android:label="透明度测试">
+            <intent-filter>
+                <action android:name="com.kc.life.rise" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".TransActivityTest2"
+            android:theme="@style/Transparent">
+        </activity>
+
     </application>
 
 </manifest>

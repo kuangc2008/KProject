@@ -26,5 +26,6 @@ dependencies {
     compile project(':dynamic-proxy-hook')
     compile project(':kasynctask')
     compile project(':binder-hook')
+    compile project(':50_android_hacks')
     compile project(':touchevent1')
 }
