@@ -2,9 +2,11 @@ package asynctask.com.kc.binder_hook;
 
 import android.os.IBinder;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.Map;
 
 /**
  * Created by kuangcheng01 on 2016/6/23.
@@ -29,8 +31,12 @@ public class BinderHookHelper {
                 new Class<?>[] { IBinder.class },
                 new BinderProxyHookHandler(rawBinder));
 
-
-
+        // 把这个hook过的Binder代理对象放进ServiceManager的cache里面
+        // 以后查询的时候 会优先查询缓存里面的Binder, 这样就会使用被我们修改过的Binder了
+        Field cacheField = serviceManager.getDeclaredField("sCache");
+        cacheField.setAccessible(true);
+        Map<String, IBinder> cache = (Map<String, IBinder>) cacheField.get(null);
+        cache.put(CLIPBOARD_SERVICE, hookedBinder);
 
     }
 }
