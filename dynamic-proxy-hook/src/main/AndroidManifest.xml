@@ -6,7 +6,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true">
 
-        <activity android:name=".MainActivity" android:label="动态代理-替换startActivity">
+        <activity android:name=".MainActivity" android:label="002动态代理-替换startActivity">
             <intent-filter>
                 <action android:name="com.kc.life.rise" />
             </intent-filter>

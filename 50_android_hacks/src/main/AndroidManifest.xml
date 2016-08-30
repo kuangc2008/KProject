@@ -6,7 +6,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true">
 
-        <activity android:name=".TransActivityTest1" android:label="透明度测试">
+        <activity android:name=".TransActivityTest1" android:label="000透明度测试">
             <intent-filter>
                 <action android:name="com.kc.life.rise" />
             </intent-filter>

@@ -19,14 +19,14 @@
         </activity>
 
 
-        <activity android:name="com.kc.a50_android_hacks.BitmapSizeTestActivity" android:label="图片大小压缩测试">
+        <activity android:name="com.kc.a50_android_hacks.BitmapSizeTestActivity" android:label="000图片大小压缩测试">
             <intent-filter>
                 <action android:name="com.kc.life.rise" />
             </intent-filter>
         </activity>
 
 
-        <activity android:name=".KImageLoaderActivity" android:label="imageloader">
+        <activity android:name=".KImageLoaderActivity" android:label="000imageloader">
             <intent-filter>
                 <action android:name="com.kc.life.rise" />
             </intent-filter>
