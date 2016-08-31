@@ -16,6 +16,12 @@
             android:theme="@style/Transparent">
         </activity>
 
+        <activity android:name=".ScaleTypeTestActivity" android:label="004ScaleTest测试" >
+            <intent-filter>
+                <action android:name="com.kc.life.rise" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
