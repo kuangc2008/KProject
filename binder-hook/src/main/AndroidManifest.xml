@@ -10,6 +10,17 @@
                 <action android:name="com.kc.life.rise" />
             </intent-filter>
         </activity>
+
+
+        <activity android:name=".intercept_activity.InterceptActivity" android:label="005Hook掉Activity">
+            <intent-filter>
+                <action android:name="com.kc.life.rise" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".intercept_activity.StubActivity">
+        </activity>
+
     </application>
 
 </manifest>
